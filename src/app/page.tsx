@@ -2,8 +2,6 @@ import { getClient } from '@/services/ApolloClient'
 import { allFilms } from '@/queries/queries'
 import { Accordion, FilmInfo } from '@/components'
 
-const TestHeading = () => <h4>Test Heading</h4>
-
 export default async function Home() {
   const { data } = await getClient().query({ query: allFilms })
   const mappedData = data.allFilms.films.map(

@@ -15,11 +15,11 @@ const Accordion = ({ accordionRows }: Props) => {
   const accordionId = uuid()
 
   return (
-    <div className="bg-sw-red-saturated rounded-2xl p-3 shadow-2xl">
+    <div className="flex flex-col items-center bg-sw-red-saturated py-12 px-3 shadow-2xl">
       {accordionRows.map((row, index) => (
         <div
           key={`accordion-${accordionId}-row-${index}`}
-          className="mb-3 last:mb-0"
+          className="mb-3 last:mb-0 w-3/4"
         >
           <AccordionRow
             title={row.title}

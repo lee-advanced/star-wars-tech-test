@@ -37,19 +37,37 @@ const AccordionRow = ({
 
   return (
     <>
-      <h3 className="h-fit md:h-36 bg-gradient-to-r from-sw-grey-dark to-sw-grey-mid text-white p-6 rounded-2xl">
+      <h3 className="h-fit bg-gradient-to-r from-black via-zinc-900 to-zinc-800 text-white p-6 rounded-2xl md:h-36">
         <button
           id={`${rowId}-control`}
           type="button"
           aria-expanded={contentVisible}
           aria-controls={`${rowId}-content`}
           onClick={onClickHandler}
-          className="flex flex-col sm:items-center md:items-start justify-center h-full w-full gap-y-3"
+          className="flex flex-col items-center justify-between h-full w-full gap-y-3 md:items-start md:flex-row"
         >
-          <span className="text-4xl mb-3 md:mb-0 font-bold">{title}</span>
-          <span className="flex justify-around text-xl text-sw-grey-light">
-            {renderedSubtitles}
-          </span>
+          <div className="flex flex-col items-start justify-center gap-y-6">
+            <span className="text-4xl font-bold">{title}</span>
+            <span className="flex flex-col gap-y-3 justify-around text-xl text-sw-grey-light md:flex-row">
+              {renderedSubtitles}
+            </span>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className={`size-8 stroke-white transition-transform duration-200 ${
+              contentVisible ? 'rotate-180' : ''
+            }`}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
         </button>
       </h3>
       {contentVisible && (
@@ -57,7 +75,7 @@ const AccordionRow = ({
           id={`${rowId}-content`}
           role="region"
           aria-labelledby={`${rowId}-control`}
-          className="w-full h-fit p-3"
+          className="w-full h-fit p-3 transition"
         >
           {children}
         </div>

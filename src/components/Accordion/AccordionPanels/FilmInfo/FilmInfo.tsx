@@ -20,17 +20,18 @@ const FilmInfo = ({
   panelId,
 }: Props) => {
   return (
-    <div className="grid grid-cols-2 p-10 h-fit">
-      <div className="grid grid-cols-3 gap-y-8">
-        <Section title="Title" copy={title} />
-        <Section title="Director" copy={director} />
-        <Section title="Release Date" copy={releaseDate} />
-        <div className="col-span-3">
-          <Section title="Opening Crawl" copy={openingCrawl} />
-        </div>
+    <div className="grid gap-y-3 md:grid-cols-6 md:grid-rows-2 md:gap-x-5 md:gap-y-0 md:p-3">
+      <Section title="Title" content={title} />
+      <Section title="Director" content={director} />
+      <Section title="Release Date" content={releaseDate} />
+      <div className="md:col-span-3">
+        <Section title="Opening Crawl" content={openingCrawl} />
       </div>
-      <div className="flex flex-col justify-center items-center">
-        <PlanetList planets={planetList} panelId={panelId} />
+      <div className="md:col-span-3 md:row-span-2 md:col-start-4 md:row-start-1">
+        <Section
+          title="Featured Planets"
+          content={<PlanetList planets={planetList} panelId={panelId} />}
+        />
       </div>
     </div>
   )

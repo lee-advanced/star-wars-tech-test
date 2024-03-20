@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'sw-grey-dark': '#0f1012',
-        'sw-grey-mid': '#041318',
+        'sw-grey-dark': '#101113',
+        'sw-grey-dark-mid': '#050f11',
+        'sw-grey-mid': '#031219',
         'sw-grey-light': '#919294',
         'sw-red-saturated': '#a84240',
         'sw-red-desaturated': '#824041',

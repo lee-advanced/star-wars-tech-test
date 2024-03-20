@@ -1,6 +1,7 @@
 import { Montserrat } from 'next/font/google'
 import type { Metadata } from 'next'
 import './globals.css'
+import { Nav } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,8 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} p-6 bg-sw-global-bg`}>
-        {children}
+      <body className={`${montserrat.className} bg-sw-global-bg`}>
+        <header className="mb-3 h-16 shadow-lg">
+          <Nav links={[{ text: 'home', href: '/' }]} />
+        </header>
+        <main className="py-12">{children}</main>
       </body>
     </html>
   )

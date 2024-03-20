@@ -9,7 +9,7 @@ const PlanetList = ({ planets, panelId }: Props) => {
   const normalisePop = (population: number | null): number => population ?? 0
 
   return (
-    <table className="w-3/4">
+    <table className="w-full">
       <thead>
         <tr>
           <th>Name</th>
