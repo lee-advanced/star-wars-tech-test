@@ -14,6 +14,7 @@ const config: Config = {
         'sw-grey-light': '#919294',
         'sw-red-saturated': '#a84240',
         'sw-red-desaturated': '#824041',
+        'sw-global-bg': '#f6f6f6',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

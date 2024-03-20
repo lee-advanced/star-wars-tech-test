@@ -24,7 +24,7 @@ const AccordionRow = ({
     renderedSubtitles = subtitles.map((subtitle, index) => (
       <span
         key={`${rowId}-subtitle-${index}`}
-        className="after:content-['|'] after:mx-3 last:after:content-['']"
+        className="md:after:content-['|'] md:after:mx-3 md:last:after:content-['']"
       >
         {subtitle}
       </span>
@@ -37,16 +37,16 @@ const AccordionRow = ({
 
   return (
     <>
-      <h3 className="h-24 border border-black bg-gradient-to-r from-sw-grey-dark to-sw-grey-mid text-white p-3">
+      <h3 className="h-fit md:h-36 bg-gradient-to-r from-sw-grey-dark to-sw-grey-mid text-white p-6 rounded-2xl">
         <button
           id={`${rowId}-control`}
           type="button"
           aria-expanded={contentVisible}
           aria-controls={`${rowId}-content`}
           onClick={onClickHandler}
-          className="flex flex-col sm:items-center md:items-start h-full w-full"
+          className="flex flex-col sm:items-center md:items-start justify-center h-full w-full gap-y-3"
         >
-          <span className="text-4xl">{title}</span>
+          <span className="text-4xl mb-3 md:mb-0 font-bold">{title}</span>
           <span className="flex justify-around text-xl text-sw-grey-light">
             {renderedSubtitles}
           </span>
@@ -57,7 +57,7 @@ const AccordionRow = ({
           id={`${rowId}-content`}
           role="region"
           aria-labelledby={`${rowId}-control`}
-          className="p-3 bg-sw-red-saturated"
+          className="w-full h-fit p-3"
         >
           {children}
         </div>

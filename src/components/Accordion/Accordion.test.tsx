@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Accordion from '.'
+import { Accordion } from '.'
 
-describe('AccordionRow', () => {
+describe('Accordion', () => {
   const TestHeading = () => <h4>Test Heading</h4>
 
   const testProps = {

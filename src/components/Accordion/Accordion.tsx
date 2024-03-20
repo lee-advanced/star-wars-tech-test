@@ -15,9 +15,12 @@ const Accordion = ({ accordionRows }: Props) => {
   const accordionId = uuid()
 
   return (
-    <div>
+    <div className="bg-sw-red-saturated rounded-2xl p-3 shadow-2xl">
       {accordionRows.map((row, index) => (
-        <div key={`accordion-${accordionId}-row-${index}`} className="mb-3">
+        <div
+          key={`accordion-${accordionId}-row-${index}`}
+          className="mb-3 last:mb-0"
+        >
           <AccordionRow
             title={row.title}
             subtitles={row.subtitles}
