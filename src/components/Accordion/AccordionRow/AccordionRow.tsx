@@ -1,26 +1,33 @@
 'use client'
 import { useState, PropsWithChildren } from 'react'
 
-import { v4 as uuid } from 'uuid'
-
 export interface Props {
   title: string
   subtitles?: string[]
+  accordionId: string
+  id: string
 }
 
 const AccordionRow = ({
   title,
   subtitles,
+  accordionId,
+  id,
   children,
 }: PropsWithChildren<Props>) => {
   const [contentVisible, setContentVisible] = useState(false)
-  const rowId = uuid()
+  const rowId = `accordion-${accordionId}-row-${id}`
 
   let renderedSubtitles
 
   if (subtitles !== undefined) {
-    renderedSubtitles = subtitles.map((subtitle) => (
-      <span key={`subtitle-${uuid()}`}>{subtitle}</span>
+    renderedSubtitles = subtitles.map((subtitle, index) => (
+      <span
+        key={`${rowId}-subtitle-${index}`}
+        className="after:content-['|'] after:mx-3 last:after:content-['']"
+      >
+        {subtitle}
+      </span>
     ))
   }
 
@@ -30,23 +37,27 @@ const AccordionRow = ({
 
   return (
     <>
-      <h3>
+      <h3 className="h-24 border border-black bg-gradient-to-r from-sw-grey-dark to-sw-grey-mid text-white p-3">
         <button
-          id={`accordion-row-${rowId}-control`}
+          id={`${rowId}-control`}
           type="button"
           aria-expanded={contentVisible}
-          aria-controls={`accordion-row-${rowId}-content`}
+          aria-controls={`${rowId}-content`}
           onClick={onClickHandler}
+          className="flex flex-col sm:items-center md:items-start h-full w-full"
         >
-          <span>{title}</span>
-          {renderedSubtitles}
+          <span className="text-4xl">{title}</span>
+          <span className="flex justify-around text-xl text-sw-grey-light">
+            {renderedSubtitles}
+          </span>
         </button>
       </h3>
       {contentVisible && (
         <div
-          id={`accordion-row-${rowId}-content`}
+          id={`${rowId}-content`}
           role="region"
-          aria-labelledby={`accordion-row-${rowId}-control`}
+          aria-labelledby={`${rowId}-control`}
+          className="p-3 bg-sw-red-saturated"
         >
           {children}
         </div>

@@ -16,7 +16,7 @@ const testProps = {
     },
     {
       title: 'Row 3',
-      subtitles: ['Row 3 subtitle'],
+      subtitles: ['Row 3 subtitle', 'Row 3 subtitle'],
       content: <TestHeading />,
     },
   ],
