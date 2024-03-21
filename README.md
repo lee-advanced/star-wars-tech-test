@@ -43,3 +43,7 @@ Assets haven't been included, but more custom assets (images, icons etc.) to spr
 ### Tooling
 
 There are many aspects of `NextJS` and `Apollo` which I am unfamiliar with (caching etc.) that I might have engaged with if I had more experience with them. However, for the scale and scope of this app, I believe many of these features would have been overkill.
+
+### Paging
+
+With more time it would have been nice to demonstrate further `NextJS`'s routing by dynamically generating a greater variety of pages for various entities (e.g. planets, characters) in the same way I have dynamically generated pages for the films.
