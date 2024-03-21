@@ -1,6 +1,5 @@
-import Section from '../../../Section'
 import { TableData } from '../../../Table/Table'
-import { Button, Table } from '@/components'
+import { Button, Section, Table } from '@/components'
 
 interface Props {
   id: string

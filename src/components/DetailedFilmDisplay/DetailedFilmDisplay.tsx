@@ -3,7 +3,6 @@ import Section from '../Section'
 import * as transformers from '@/utils/transformers'
 
 interface Props {
-  // TODO: change to typed schema
   filmData: any
 }
 
