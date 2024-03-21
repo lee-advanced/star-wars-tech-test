@@ -41,7 +41,7 @@ const AccordionRow = ({
         !contentVisible ? 'hover:scale-105 hover:transition-transform' : ''
       }`}
     >
-      <h3 className="h-fit p-6 md:h-36">
+      <h3 className="h-min-fit p-6">
         <button
           id={`${rowId}-control`}
           type="button"
@@ -50,7 +50,7 @@ const AccordionRow = ({
           onClick={onClickHandler}
           className="flex flex-col items-center justify-between h-full w-full gap-y-3 md:items-start md:flex-row"
         >
-          <div className="flex flex-col items-start justify-center gap-y-6">
+          <div className="flex flex-col items-center justify-center gap-y-6 md:items-start">
             <span className="text-4xl font-bold">{title}</span>
             <span className="flex flex-col gap-y-3 justify-around text-xl text-sw-grey-light md:flex-row">
               {renderedSubtitles}

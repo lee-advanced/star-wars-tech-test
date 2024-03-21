@@ -1,17 +1,18 @@
 export interface Planet {
   name: string
-  population: number
+  population: number | null
   climates: string[]
 }
 
 export interface NormalisedPlanet extends Omit<Planet, 'climates'> {
   [key: string]: string | number
+  population: number
   climates: string
 }
 
 export interface Character {
   name: string
-  species: Species
+  species: Species | null
 }
 
 export interface NormalisedCharacter extends Omit<Character, 'species'> {
@@ -21,7 +22,7 @@ export interface NormalisedCharacter extends Omit<Character, 'species'> {
 
 export interface Species {
   name: string
-  homeworld: Omit<Planet, 'population|climates'>
+  homeworld: Omit<Planet, 'population' | 'climates'> | null
 }
 
 export interface NormalisedSpecies extends Omit<Species, 'homeworld'> {
@@ -33,17 +34,19 @@ export interface Pilot extends Omit<Character, 'species'> {}
 
 export interface Starship {
   name: string
-  pilots: Pilot[]
+  pilotConnection: {
+    pilots: Pilot[]
+  }
 }
 
-export interface NormalisedStarship extends Omit<Starship, 'pilots'> {
+export interface NormalisedStarship extends Omit<Starship, 'pilotConnection'> {
   [key: string]: string | number
   pilots: string
 }
 
 export interface Vehicle extends Starship {}
 
-export interface NormalisedVehicle extends Omit<Vehicle, 'pilots'> {
+export interface NormalisedVehicle extends Omit<Vehicle, 'pilotConnection'> {
   [key: string]: string | number
   pilots: string
 }

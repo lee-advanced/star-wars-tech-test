@@ -41,7 +41,9 @@ export const craftTransformer = (
   craft: entities.Starship | entities.Vehicle
 ): entities.NormalisedStarship | entities.NormalisedVehicle => {
   const normalisedPilots =
-    craft.pilots !== undefined ? craft.pilots.join(', ') : 'Unknown'
+    craft.pilotConnection.pilots.length > 0
+      ? craft.pilotConnection.pilots.map((pilot) => pilot.name).join(', ')
+      : 'Unknown'
 
   return {
     name: craft.name,

@@ -9,6 +9,8 @@ describe('AccordionRow', () => {
   const testProps = {
     title: 'Accordion Row',
     subtitles: ['Accordion Row Subtitle'],
+    accordionId: 'testAccordion',
+    id: '1',
   }
 
   it('should render', () => {

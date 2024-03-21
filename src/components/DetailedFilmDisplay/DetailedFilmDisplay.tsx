@@ -1,5 +1,5 @@
 import Table from '../Table'
-import Section from '../Accordion/AccordionPanels/FilmInfo/Section'
+import Section from '../Section'
 import * as transformers from '@/utils/transformers'
 
 interface Props {
@@ -23,19 +23,19 @@ const DetailedFilmDisplay = ({ filmData }: Props) => {
   } = filmData
 
   return (
-    <div className="flex flex-col gap-y-8 p-4 items-center md:items-start md:px-12 ">
+    <div className="flex flex-col gap-y-6 p-4 items-center md:gap-y-8 md:items-start md:px-12 ">
       <h1 className="text-6xl font-bold">{title}</h1>
-      <div className="grid md:grid-cols-2 gap-24">
-        <div className="grid md:grid-cols-4 md:col-span-2 gap-24">
+      <div className="grid gap-y-6 md:grid-cols-2 md:gap-24">
+        <div className="grid gap-y-6 md:grid-cols-4 md:col-span-2 md:gap-24">
           <Section title="Episode" content={`${episodeID}`} />
           <Section title="Director" content={director} />
           <Section title="Producers" content={producers.join('\n')} />
           <Section title="Release Date" content={releaseDate} />
         </div>
-        <div className="grid md:col-span-2 gap-24">
+        <div className="grid gap-y-6 md:col-span-2 md:gap-24">
           <Section title="Opening Crawl" content={openingCrawl} />
         </div>
-        <div className="grid md:col-span-2 md:grid-cols-2 place-content-start gap-24">
+        <div className="grid gap-y-6 place-content-stretch md:col-span-2 md:grid-cols-2 md:place-content-start md:gap-24">
           <Table
             title="Characters"
             tableHeaders={['Name', 'Species']}

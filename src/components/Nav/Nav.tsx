@@ -12,7 +12,7 @@ interface Props {
 const Nav = ({ links }: Props) => {
   return (
     <nav className="w-full h-full flex justify-center items-center uppercase">
-      <ul className="flex justify-around w-1/3 text-xl">
+      <ul className="flex justify-around w-full text-xl md:w-1/3">
         {links.map((link, index) => (
           <li
             key={`nav-link-${index}`}
