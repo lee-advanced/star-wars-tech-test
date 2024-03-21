@@ -4,6 +4,7 @@ import FilmInfo from '.'
 
 describe('FilmInfo', () => {
   const testProps = {
+    id: 'Filmd id',
     title: 'Film title',
     director: 'Director',
     releaseDate: '10th April 1980',

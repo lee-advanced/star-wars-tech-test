@@ -36,8 +36,12 @@ const AccordionRow = ({
   }
 
   return (
-    <>
-      <h3 className="h-fit bg-gradient-to-r from-black via-zinc-900 to-zinc-800 text-white p-6 rounded-2xl md:h-36">
+    <div
+      className={`h-fit bg-gradient-to-r from-black via-zinc-900 to-zinc-800 text-white rounded-2xl ${
+        !contentVisible ? 'hover:scale-105 hover:transition-transform' : ''
+      }`}
+    >
+      <h3 className="h-fit p-6 md:h-36">
         <button
           id={`${rowId}-control`}
           type="button"
@@ -71,16 +75,19 @@ const AccordionRow = ({
         </button>
       </h3>
       {contentVisible && (
-        <div
-          id={`${rowId}-content`}
-          role="region"
-          aria-labelledby={`${rowId}-control`}
-          className="w-full h-fit p-3 transition"
-        >
-          {children}
+        <div className="flex flex-col">
+          <hr className="w-1/2 self-center my-4 opacity-50" />
+          <div
+            id={`${rowId}-content`}
+            role="region"
+            aria-labelledby={`${rowId}-control`}
+            className="w-full h-fit p-3 transition"
+          >
+            {children}
+          </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
 export default AccordionRow

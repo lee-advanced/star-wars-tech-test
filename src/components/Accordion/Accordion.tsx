@@ -15,7 +15,7 @@ const Accordion = ({ accordionRows }: Props) => {
   const accordionId = uuid()
 
   return (
-    <div className="flex flex-col items-center bg-sw-red-saturated py-12 px-3 shadow-2xl">
+    <div className="flex flex-col items-center bg-sw-red-saturated py-12 px-3 shadow-2xl w-full">
       {accordionRows.map((row, index) => (
         <div
           key={`accordion-${accordionId}-row-${index}`}

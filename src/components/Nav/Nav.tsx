@@ -12,9 +12,12 @@ interface Props {
 const Nav = ({ links }: Props) => {
   return (
     <nav className="w-full h-full flex justify-center items-center uppercase">
-      <ul>
+      <ul className="flex justify-around w-1/3 text-xl">
         {links.map((link, index) => (
-          <li key={`nav-link-${index}`} className="hover:text-red-600">
+          <li
+            key={`nav-link-${index}`}
+            className="hover:text-red-600 hover:border-b hover:border-red-600"
+          >
             <Link href={link.href}>{link.text}</Link>
           </li>
         ))}

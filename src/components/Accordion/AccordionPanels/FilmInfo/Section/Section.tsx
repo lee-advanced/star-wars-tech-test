@@ -1,18 +1,13 @@
 interface Props {
   title: string
-  content: string | React.ReactNode
+  content: string
 }
 
 const Section = ({ title, content }: Props) => {
-  const contentIsString = typeof content === 'string'
-
   return (
-    // <div className="border border-black">
     <div>
-      <h4 className={`text-lg font-bold ${contentIsString ? '' : 'mb-3'}`}>
-        {title}
-      </h4>
-      {contentIsString ? <p>{content}</p> : content}
+      <h4 className="text-lg font-bold text-sw-red-saturated">{title}</h4>
+      <p>{content}</p>
     </div>
   )
 }

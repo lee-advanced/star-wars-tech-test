@@ -19,9 +19,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className} bg-sw-global-bg`}>
         <header className="mb-3 h-16 shadow-lg">
-          <Nav links={[{ text: 'home', href: '/' }]} />
+          <Nav
+            links={[
+              { text: 'home', href: '/' },
+              { text: 'films', href: '/films' },
+            ]}
+          />
         </header>
-        <main className="py-12">{children}</main>
+        <main className="flex flex-col items-center justify-center py-12">
+          {children}
+        </main>
       </body>
     </html>
   )

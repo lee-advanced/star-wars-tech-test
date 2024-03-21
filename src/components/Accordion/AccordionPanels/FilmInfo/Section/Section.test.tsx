@@ -5,7 +5,7 @@ import Section from '.'
 describe('Section', () => {
   const testProps = {
     title: 'Title',
-    copy: 'Film title',
+    content: 'Film title',
   }
 
   it('should render', () => {
