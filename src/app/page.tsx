@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="grid place-content-center text-center">
+    <div className="grid place-content-center text-center px-8">
       <h1 className="text-6xl font-bold mb-8">Homepage</h1>
       <p>
         Welcome to this example Application. You can see the list of films

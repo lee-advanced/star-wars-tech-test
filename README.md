@@ -4,6 +4,8 @@ Run `npm install` to begin installation.
 
 To run the application locally, run `npm run dev`. To run tests, run `npm run test`.
 
+To run a production build, run `npm run build` and then `npm run start`.
+
 ## Approach
 
 ### Frameworks/Libraries Used
