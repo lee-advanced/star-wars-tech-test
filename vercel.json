@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/test/:path*",
-        "destination": "https://www.oneadvanced.com/:path*"
+        "destination": "http://www.oneadvanced.com/:path*"
       },
       {
         "source": "/blog",
