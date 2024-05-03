@@ -8,6 +8,10 @@
       {
         "source": "/blog/",
         "destination": "http://www.oneadvanced.com"
+      },
+      {
+        "source": "/blog2",
+        "destination": "http://www.oneadvanced.com/"
       }
     ]
   }
