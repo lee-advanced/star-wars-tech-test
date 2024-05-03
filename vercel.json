@@ -2,8 +2,8 @@
   "trailingSlash": false,
     "rewrites": [
       {
-        "source": "/test/:path*",
-        "destination": "http://www.oneadvanced.com/:path*"
+        "source": "/test/:path*/",
+        "destination": "http://www.oneadvanced.com/:path*/"
       },
       {
         "source": "/blog/",
