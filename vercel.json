@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/test/:path*",
+        "destination": "https://www.oneadvanced.com/:path*"
+      }
+    ]
+  }
