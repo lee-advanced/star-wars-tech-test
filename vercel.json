@@ -2,11 +2,11 @@
     "rewrites": [
       {
         "source": "/test/:path*",
-        "destination": "http://www.oneadvanced.com/:path*"
+        "destination": "http://www.oneadvanced.com/:path*/"
       },
       {
         "source": "/blog",
-        "destination": "http://www.oneadvanced.com"
+        "destination": "http://www.oneadvanced.com/"
       }
     ]
   }
